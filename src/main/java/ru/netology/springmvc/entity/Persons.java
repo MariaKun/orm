@@ -18,8 +18,8 @@ public class Persons {
     private PK pk;
 
     @Column(length = 20)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(nullable = false, length = 50)
-    private String city_of_living;
+    private String cityOfLiving;
 }
