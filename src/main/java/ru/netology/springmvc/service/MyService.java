@@ -32,7 +32,9 @@ public class MyService {
         personsRepository.save(person);
     }
 
-    public List<Persons> getAll() { return personsRepository.findAll(); }
+    public List<Persons> getAll() {
+        return personsRepository.findAll();
+    }
 
     public void deleteAll() {
         personsRepository.deleteAll();

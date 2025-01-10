@@ -1,9 +1,7 @@
 package ru.netology.springmvc.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.netology.springmvc.entity.PK;
 import ru.netology.springmvc.entity.Persons;
 import ru.netology.springmvc.service.MyService;
 
@@ -41,7 +39,7 @@ public class MyController {
         return service.findByPk_NameAndPk_Surname(name, surname);
     }
 
-    @PostMapping("/persons/save")
+    @PostMapping("/persons")
     public void save(@RequestBody Persons person) {
         service.save(person);
     }
@@ -51,7 +49,7 @@ public class MyController {
         service.deleteById(person);
     }
 
-    @DeleteMapping("/persons/deleteall")
+    @DeleteMapping("/persons")
     public void deleteAll() {
         service.deleteAll();
     }
