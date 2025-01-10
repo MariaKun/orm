@@ -27,21 +27,21 @@ public class MyController {
     }
 
     @GetMapping("/persons/by-city")
-    public List<Persons> findByCityOfLivingLikeIgnoreCase(@RequestParam String city) {
-        return service.findByCityOfLivingLikeIgnoreCase(city);
+    public List<Persons> findByCity(@RequestParam String city) {
+        return service.findByCity(city);
     }
 
     @GetMapping("/persons/by-age")
-    public List<Persons> findByPk_AgeLessThanOrderByPk_AgeAsc(@RequestParam int age) {
-        return service.findByPk_AgeLessThanOrderByPk_AgeAsc(age);
+    public List<Persons> findByAge(@RequestParam int age) {
+        return service.findByAge(age);
     }
 
     @GetMapping("/persons/by-name")
-    public Optional<Persons> findByPk_NameAndPk_Surname(@RequestParam String name, @RequestParam String surname) {
-        return service.findByPk_NameAndPk_Surname(name, surname);
+    public Optional<Persons> findByNameAndSurname(@RequestParam String name, @RequestParam String surname) {
+        return service.findByNameAndSurname(name, surname);
     }
 
-    @PostMapping("/persons/save")
+    @PostMapping("/persons")
     public void save(@RequestBody Persons person) {
         service.save(person);
     }
@@ -51,10 +51,9 @@ public class MyController {
         service.deleteById(person);
     }
 
-    @DeleteMapping("/persons/deleteall")
+    @DeleteMapping("/persons")
     public void deleteAll() {
         service.deleteAll();
     }
-
 }
 

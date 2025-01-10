@@ -16,23 +16,25 @@ public class MyService {
 
     private final PersonsRepository personsRepository;
 
-    public List<Persons> findByCityOfLivingLikeIgnoreCase(String city) {
-        return personsRepository.findByCityOfLivingLikeIgnoreCase(city);
+    public List<Persons> findByCity(String city) {
+        return personsRepository.findByCity(city);
     }
 
-    public List<Persons> findByPk_AgeLessThanOrderByPk_AgeAsc(int age) {
-        return personsRepository.findByPk_AgeLessThanOrderByPk_AgeAsc(age);
+    public List<Persons> findByAge(int age) {
+        return personsRepository.findByAge(age);
     }
 
-    public Optional<Persons> findByPk_NameAndPk_Surname(String name, String surname) {
-        return personsRepository.findByPk_NameAndPk_Surname(name, surname);
+    public Optional<Persons> findByNameAndSurname(String name, String surname) {
+        return personsRepository.findByNameAndSurname(name, surname);
     }
 
     public void save(Persons person) {
         personsRepository.save(person);
     }
 
-    public List<Persons> getAll() { return personsRepository.findAll(); }
+    public List<Persons> getAll() {
+        return personsRepository.findAll();
+    }
 
     public void deleteAll() {
         personsRepository.deleteAll();
